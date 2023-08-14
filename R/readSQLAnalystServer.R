@@ -5,15 +5,19 @@
 # The only input needed is the SQL query used to generate the data
 #
 
-
+#define function name and input variable
 readSQLAnalystServer <- function(SQLQuery) {
 
-  connection <-dbConnect(odbc(),
+
+#create a connection to MLCSU analyst server using user credentials
+
+  connection <-DBI::dbConnect(odbc::odbc(),
                          Driver="SQL Server",
                          Server="MLCSU-BI-SQL",
                          Database="AnalystGlobal",
                          Trusted_Connection="True")
 
+#use the input variable SQLQuery to get data from the analyst server
   dbGetQuery(connection, SQLQuery)
 
 

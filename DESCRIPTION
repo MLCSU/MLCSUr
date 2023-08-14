@@ -1,0 +1,16 @@
+Package: MLCSr
+Type: Package
+Title: Automate Regular Tasks for Users at Midlands and Lancashire Commissioning Support Unit (MLCSU)
+Version: 0.1.0
+Authors@R: person("Scott","Johnson", email = "scott.johnson2@nhs.net", role = c("aut","cre"))
+Description: Allows the simplification of running routine functions for MLCSU staff.
+    Any function that is run regularly by a member of MLCSU staff can be added to the package 
+    in order to speed up automation of tasks.
+URL: https://github.com/MLCSU/MLCSUr
+BugReports: https://github.com/MLCSU/MLCSUr/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    odbc,
+    DBI
+LazyData: true

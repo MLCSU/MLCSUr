@@ -4,6 +4,11 @@
 #
 # The only input needed is the SQL query used to generate the data
 #
+# the following block ised used to automatically manage
+# roxygen namespace tags
+#' @importFrom DBI dbConnect
+#' @importFrom odbc odbc
+#' @export
 
 #define function name and input variable
 readSQLAnalystServer <- function(SQLQuery) {
@@ -18,7 +23,7 @@ readSQLAnalystServer <- function(SQLQuery) {
                          Trusted_Connection="True")
 
 #use the input variable SQLQuery to get data from the analyst server
-  dbGetQuery(connection, SQLQuery)
+  DBI::dbGetQuery(connection, SQLQuery)
 
 
                                             }

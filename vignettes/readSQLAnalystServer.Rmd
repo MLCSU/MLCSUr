@@ -1,0 +1,54 @@
+---
+title: "Introduction to the `MLCSUr` package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to the `MLCSUr` package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Welcome to the Midlands and Lancashire Commissioning Support Unit (MLCSU) organisation package.
+This package exists to aid automation of routine tasks for MLCSU employees, as well as a place to share code that may be useful to others.
+
+This document provides a simple overview of how to use the package.
+
+
+## Installing and loading the package
+
+The following code can be used to install the package directly from the GitHub Repo and load ready for use
+
+```{r setup, message=FALSE, warning=FALSE}
+
+#install.packages('devtools')
+#devtools::install_github('MLCSU/MLCSUr')
+
+#install.packages('MLCSUr', repos = )
+
+library(MLCSUr)
+
+
+
+```
+
+
+## Using the readSQLAnalystServer function
+
+The MLCSUr package contains a function `readSQLAnalystServer` that allows direct connection to the MLCSU Analyst SQL Server. This function is designed to speed up any process for MLCSU staff that requires data from the MLCSU Data Warehouse. The only argument required by this function is `SQLQuery`, the query used to pull the data required.
+
+```{r readSQLvignette}
+
+# write a SQL query to import the data you require
+exampleSQLQuery  <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
+
+# pass the SQL query to the readSQLAnalystServer function to read the data in
+episodesData <- readSQLAnalystServer(exampleSQLQuery)
+
+```
+

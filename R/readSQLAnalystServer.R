@@ -15,7 +15,7 @@
 #'
 #'
 
-#define function name and input variable
+# define function name and input variable
 #' Title
 #'
 #' @param SQLQuery A SQL Query to read data from the Midlands and Lancashire CSU Analyst Server.
@@ -28,26 +28,21 @@
 #' library(MLCSUr)
 #'
 #' # write a SQL query to import the data you require
-#' exampleSQLQuery  <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
+#' exampleSQLQuery <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
 #'
 #' # pass the SQL query to the readSQLAnalystServer function to read the data in
 #' episodesData <- readSQLAnalystServer(exampleSQLQuery)
 #'
-
 readSQLAnalystServer <- function(SQLQuery) {
+  # create a connection to MLCSU analyst server using user credentials
 
+  connection <- DBI::dbConnect(odbc::odbc(),
+    Driver = "SQL Server",
+    Server = "MLCSU-BI-SQL",
+    Database = "AnalystGlobal",
+    Trusted_Connection = "True"
+  )
 
-
-#create a connection to MLCSU analyst server using user credentials
-
-  connection <-DBI::dbConnect(odbc::odbc(),
-                         Driver="SQL Server",
-                         Server="MLCSU-BI-SQL",
-                         Database="AnalystGlobal",
-                         Trusted_Connection="True")
-
-#use the input variable SQLQuery to get data from the analyst server
+  # use the input variable SQLQuery to get data from the analyst server
   DBI::dbGetQuery(connection, SQLQuery)
-
-
-                                            }
+}

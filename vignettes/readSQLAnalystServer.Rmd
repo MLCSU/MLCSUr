@@ -26,15 +26,12 @@ The following code can be used to install the package directly from the GitHub R
 
 ```{r setup, message=FALSE, warning=FALSE}
 
-#install.packages('devtools')
-#devtools::install_github('MLCSU/MLCSUr')
+# install.packages('devtools')
+# devtools::install_github('MLCSU/MLCSUr')
 
-#install.packages('MLCSUr', repos = )
+# install.packages('MLCSUr', repos = )
 
 library(MLCSUr)
-
-
-
 ```
 
 
@@ -45,10 +42,9 @@ The MLCSUr package contains a function `readSQLAnalystServer` that allows direct
 ```{r readSQLvignette}
 
 # write a SQL query to import the data you require
-exampleSQLQuery  <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
+exampleSQLQuery <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
 
 # pass the SQL query to the readSQLAnalystServer function to read the data in
 episodesData <- readSQLAnalystServer(exampleSQLQuery)
-
 ```
 

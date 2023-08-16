@@ -11,12 +11,9 @@
 #'
 #' @importFrom DBI dbConnect
 #' @importFrom odbc odbc
-#' @export
 #'
 #'
-
-# define function name and input variable
-#' Title
+#'
 #'
 #' @param SQLQuery A SQL Query to read data from the Midlands and Lancashire CSU Analyst Server.
 #'
@@ -25,6 +22,8 @@
 #'
 #' @examples
 #'
+#'
+#'
 #' library(MLCSUr)
 #'
 #' # write a SQL query to import the data you require
@@ -32,6 +31,9 @@
 #'
 #' # pass the SQL query to the readSQLAnalystServer function to read the data in
 #' episodesData <- readSQLAnalystServer(exampleSQLQuery)
+#'
+#'
+#' @export
 #'
 readSQLAnalystServer <- function(SQLQuery) {
   # create a connection to MLCSU analyst server using user credentials

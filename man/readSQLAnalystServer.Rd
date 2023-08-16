@@ -22,6 +22,8 @@ The only input needed is the SQL query used to generate the data
 }
 \examples{
 
+
+
 library(MLCSUr)
 
 # write a SQL query to import the data you require
@@ -29,5 +31,6 @@ exampleSQLQuery <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisod
 
 # pass the SQL query to the readSQLAnalystServer function to read the data in
 episodesData <- readSQLAnalystServer(exampleSQLQuery)
+
 
 }

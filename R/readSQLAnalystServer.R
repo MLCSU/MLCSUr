@@ -11,7 +11,7 @@
 #'
 #' @importFrom DBI dbConnect
 #' @importFrom odbc odbc
-#' @export readSQLAnalystServer
+#' @export
 #'
 #'
 

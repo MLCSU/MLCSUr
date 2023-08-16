@@ -13,7 +13,7 @@ readSQLAnalystServer(SQLQuery)
 A dataset taken from Midlands and Lancashire CSU SQL Analyst Server
 }
 \description{
-Read data from Midlands and Lancashire CSU Business Intelligence Analyst SQL Server
+Read Data from Midlands and Lancashire CSU Business Intelligence Analyst SQL Server
 }
 \details{
 This function allows the user to connect to the commonly used analyst server directly to access data
@@ -25,7 +25,7 @@ The only input needed is the SQL query used to generate the data
 library(MLCSUr)
 
 # write a SQL query to import the data you require
-exampleSQLQuery  <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
+exampleSQLQuery <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
 
 # pass the SQL query to the readSQLAnalystServer function to read the data in
 episodesData <- readSQLAnalystServer(exampleSQLQuery)

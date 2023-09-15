@@ -25,7 +25,6 @@ This document provides a simple overview of how to use the package.
 The following code can be used to install the package directly from the GitHub Repo and load ready for use
 
 ```{r setup, message=FALSE, warning=FALSE}
-
 # install.packages('devtools')
 # devtools::install_github('MLCSU/MLCSUr')
 
@@ -35,16 +34,17 @@ library(MLCSUr)
 ```
 
 
-## Using the readSQLAnalystServer function
+## Using the read_sql_analyst_Server function
 
-The MLCSUr package contains a function `readSQLAnalystServer` that allows direct connection to the MLCSU Analyst SQL Server. This function is designed to speed up any process for MLCSU staff that requires data from the MLCSU Data Warehouse. The only argument required by this function is `SQLQuery`, the query used to pull the data required.
+The MLCSUr package contains a function `read_sql_analyst_Server` that allows direct connection to the MLCSU Analyst SQL Server. This function is designed to speed up any process for MLCSU staff that requires data from the MLCSU Data Warehouse. The only argument required by this function is `sql_query`, the query used to pull the data required.
 
 ```{r readSQLvignette}
-
 # write a SQL query to import the data you require
-exampleSQLQuery <- "SELECT TOP (1000) * FROM EAT_Reporting.dbo.tbInpatientEpisodes"
+example_sql_query <- "
+                      SELECT TOP (1000) *
+                      FROM EAT_Reporting.dbo.tbInpatientEpisodes
+                    "
 
-# pass the SQL query to the readSQLAnalystServer function to read the data in
-episodesData <- readSQLAnalystServer(exampleSQLQuery)
+# pass the SQL query to the read_sql_analyst_Server function to read the data in
+episodesData <- read_sql_analyst_Server(example_sql_query)
 ```
-
